@@ -5,12 +5,12 @@
     "type": "git",
     "url": ""
   },
-  "description": "capstone project for UI enablement",
+  "description": "capstone project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config webpack.dev.js",
     "start:dist": "http-server dist --port ${PORT:-8080}",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.dev.js",
     "preview": "npm run build && npm run start:dist",
     "eval": "webpack --config webpack.dev.js"
   },

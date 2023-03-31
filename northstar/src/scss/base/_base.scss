@@ -68,3 +68,176 @@ input[type=text], [type=email]{
       border-bottom: 2px solid $light-blue;
   }
 }
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('https://fonts.googleapis.com/css2?family=Arimo&display=swap')
+}
+
+/**
+ * Clear inner floats
+ */
+ .clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+ body {
+  color: $text-color;
+  font: normal 18px / 1.4 $text-font-stack;
+  
+}
+
+.homeTeaser {
+    h2 {
+      font: normal 28px / 1.4 $text-font-stack;
+      
+      @media only screen and (max-width: 960px) and (min-width: 600px)  {
+        font: normal 38px / 1.4 $text-font-stack;
+    }
+      @include screen(custom, min-width, 1024px) {
+        font: normal 48px / 48px $text-font-stack;
+    }
+    }
+}
+
+.products {
+  h2 {
+    font: bold 16px / 1 $text-font-stack;
+
+  }
+}
+
+.section-heading {
+  h2 {
+    font: bold 36px / 1 $text-font-stack;
+
+  }
+  p {
+    font: normal 20px / 1 $text-font-stack;
+  }
+}
+
+.delivery-payments-info {
+  p {
+    &.card__title {
+      font: bold 16px / 1 $text-font-stack;
+    }
+    &.card__description {
+      font: normal 16px / 1 $text-font-stack;
+    }
+  }
+}
+
+.offers {
+  h2 {
+    color:$white-color;
+  }
+  p {
+    color:$white-color;
+  }
+}
+
+footer {
+  a {
+    font: normal 16px / 1.4 $text-font-stack;
+  }
+}
+.footer-copyright {
+  h6 {
+    font: italic 14px / 1 $text-font-stack;
+    margin:0px;
+  }
+  a {
+    font: normal 14px / 1 $text-font-stack;
+    
+  }
+}
+
+.quotes__card__content {
+  h3 {
+      font: bold 24px / 1.4 $text-font-stack;
+    
+  }
+  p {
+      font: normal 21px / 1.4 $text-font-stack;
+    
+  }
+}
+
+.founders {
+  h2 {
+     font: bold 21px / 1.4 $text-font-stack;
+  }
+}
+
+.contact-us-container {
+  .section-heading {
+    h2 {
+      @include screen(med-small) {
+        font: bold 16px / 1.4 $text-font-stack;
+        }
+        @media only screen and (max-width: 960px) and (min-width: 600px)  {
+          font: normal 28px / 1.4 $text-font-stack;
+      }
+       @include screen(custom, min-width, 1024px) {
+        font: bold 36px / 1.4 $text-font-stack;
+    }
+    }
+    p {
+      @include screen(med-small) {
+        font: normal 10px / 1.4 $text-font-stack;
+        }
+       @include screen(custom, min-width, 1024px) {
+        font: normal 16px / 19px $text-font-stack;
+    }
+    }
+  }
+}

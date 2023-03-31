@@ -1,0 +1,410 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.homeTeaser__button {
+
+text-decoration: none;
+border-style: solid;
+border-width: 4px;
+padding: 18px 36px 18px 36px;
+
+    &--primary {
+        color:$white-color;
+        
+    }
+}
+
+.card__button {
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    padding: 14px 36px 14px 36px;
+}
+
+.offers-button--primary {
+    @extend .card__button;
+    background-color: $white-color;
+    color:$light-blue;
+}
+
+.card__button__buy-now--primary {
+    @extend .offers-button--primary;
+    
+    border-radius: 21px;
+}
+
+.primary__button {
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    padding: 18px 36px 18px 36px;
+}
+
+.shop-now__button--primary {
+    @extend .primary__button;
+    background-color: $light-blue;
+    color:$white-color;
+
+    &.shop-now__button--hover--primary-blue {
+        @include on-event {
+            color: $light-blue;
+          }
+    }
+}
+
+button {
+    padding: 18px 36px 18px 36px;
+    &.userForm__submit {
+        background-color: $light-blue;
+        color:$white-color;
+    }
+  }
+
+.section-heading {
+    text-align: center;
+    margin: 100px 10px; 
+} 
+
+.quotes {
+    margin-top: 60px;
+}
+.quotes__card {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    //padding-bottom: 140px 10px;
+    padding: 70px 10px;
+}
+.quotes__card__img {
+    width: 210px;
+    height:210px;
+}
+.quotes__card__content {
+    width: 663px;
+}
+.quote__img::before {
+    content: url('../resources/quote.svg');
+}
+
+
+.products {
+  
+    margin: 50px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content: center;
+    .card {
+    width: 295px;
+    height:412px;
+}
+.card__img {
+    width:100%;
+    height: 340px;
+    overflow: hidden; //clips/hides any overflowing conetent
+}
+.card__content {
+    padding-top: 16px;
+    text-align:center;
+}
+.card__title {
+    margin: 1px;
+}
+.card__price {
+    margin:6px
+}
+
+}
+
+.offers {
+    display: flex;
+    margin: 40px 10px;
+    gap:20px;
+
+    .card:first-child {
+        justify-content: center;
+    display: flex;
+    background-color: $black-color;
+    }
+    .card:last-child {
+        justify-content: center;
+    display: flex;
+    flex-grow: 0;
+    @media only screen and (max-width: 960px) and (min-width: 600px)  {
+        flex-grow: 1;
+    }
+    @include screen(small) {
+        flex-grow: 1;
+    }
+    background-color: $black-color;
+    }
+
+    .card__content {
+        padding: 120px 90px;
+        @include screen(small) {
+            padding: 60px 20px;
+        }
+        text-align: center;
+    }
+    .card__description {
+        width: 400px;
+        @include screen(small) {
+            width: 300px;
+        }
+        margin-bottom: 32px;
+    }
+}
+
+.homeTeaser {
+    position: relative;
+    text-align: center;
+    color: $white-color;
+
+    .homeTeaser_content {
+        position: absolute;
+        top: 0;
+        @media only screen and (max-width: 960px) and (min-width: 600px)  {
+            top: 100px;
+            right: 50px;
+            width: 400px;
+        }
+        @include screen(custom, min-width, 1024px) {
+            top: 304px;
+            right: 189px;
+            width: 490px;
+        }
+        
+    }
+}
+
+.form-container {
+    //width:;
+    form {
+        @include screen(med-small) {
+            justify-content: center;
+        }
+    }
+    
+}
+.contact-us-main {
+    .section-heading {
+        @include screen(med-small) {
+            text-align: center;
+        }
+    }
+}
+
+form {
+    display: flex;
+    gap:25px;
+    flex-wrap: wrap;
+
+    @include screen(med-small) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    input[type=text], [type=email]{
+        @include screen(med-small) {
+            width:200px;
+        }
+        @include screen(custom, min-width, 1024px) {
+            width:400px;
+        }
+       
+        @include on-event {
+            border-bottom: none;
+            outline: $light-blue ridge 1px; 
+          }
+    }
+
+    textarea {
+        @include on-event {
+            border: 2px solid $light-blue;
+          }
+          border-bottom: 1px solid rgb(0,0,0);
+    }
+
+    .error {
+        border-bottom: 2px solid $error-highlight-color;
+    }
+}
+
+.userForm__field {
+    flex:0;  
+    display:flex;
+    flex-direction:column;
+    &.message {
+        flex:0;
+        @include screen(med-small) {
+            width:60%;
+        }
+    }
+}
+
+.userForm__submit__container {
+    @include screen(med-small) {
+        margin:16px;
+        display: flex;
+        justify-content: center;
+    }
+    margin:24px;
+}
+.delivery-payments-info {
+    margin: 70px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    //margin:65px;
+    gap: 65px;
+    @include screen(med-small) {
+        gap: 85px;
+    }
+    justify-content: center;
+    .card {
+        width: 250px;
+
+       
+    }
+    p {
+        margin: 10px 0px;
+    }
+    .card__description {
+        margin-left: 55px;
+    }
+    .ship::before {
+        content: url('../resources/iconshipping.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    .support::before {
+        content: url('../resources/iconsupport.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    .return::before {
+        content: url('../resources/iconreturn.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    .secure::before {
+        content: url('../resources/iconpayment.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    
+    
+}
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 10px;
+
+
+    &.products {
+        margin-top:80px;
+
+        .card__content {
+            position:relative;
+        }
+        .card__content__link {
+            position: absolute;
+            left: calc(50% - 85px);
+            bottom: calc(30% - 100px);
+        }
+    }
+
+    &.founders {
+        margin:15px 0px;
+        padding: 10px 0px;
+    }
+}
+
+.card__content__link {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-us-container {
+    display:flex;
+    margin:10px;
+   // flex-wrap: wrap;
+    // justify-content: center;
+    @include screen(med-small) {
+      flex-wrap: wrap;
+     justify-content: center;
+     section {
+      width:100%;
+    }
+     aside {
+      width:300px;
+    }
+    }
+    @include screen(small) {
+     flex-wrap: wrap;
+     justify-content: center;
+     section {
+      width:300px;
+    }
+     aside {
+      width:300px;
+    }
+    }
+    @include screen(custom, min-width, 1024px) {
+      section {
+        flex: 3;
+      }
+      aside {
+        flex: 1;
+        width:350px;
+      }
+    }
+    
+  }
+
+  .section-heading {
+    @include screen(med-small) {
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    }
+  }
+  .section-heading__description {
+    @include screen(med-small) {
+      width: 250px;
+    }
+  }
+
+  #success-message {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+  }
+  .shop-now--align-center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 110px;
+  }

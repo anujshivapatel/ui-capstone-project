@@ -15,10 +15,7 @@ module.exports = {
 
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
-    global: './src/js/global.js',
-    home: './src/js/home.js',
-    about: './src/js/about.js',
-    contact_us: './src/js/contact-us.js'
+    index: './src/js/index.js',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -82,19 +79,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: true,
-      chunks: ['global' , 'home'],
+      chunks: ['index'],
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/html/about.html',
       inject: true,
-      chunks: ['global' , 'about'],
+      chunks: ['index'],
       filename: 'about.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/html/contact-us.html',
+      template: './src/html/contactUs.html',
       inject: true,
-      chunks: ['global' , 'contact_us'],
+      chunks: ['index'],
       filename: 'contact-us.html'
     }),
     new CopyWebpackPlugin({

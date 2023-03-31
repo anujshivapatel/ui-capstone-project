@@ -1,0 +1,123 @@
+$breakpoint-small: 600px;
+$breakpoint-med-small: 960px;
+$breakpoint-med: 1024px;
+$breakpoint-large: 1175px;
+@mixin screen($size, $type: max-width, $pixels: $breakpoint-small) {
+  @if $size == 'small' {
+    @media screen and (max-width: $breakpoint-small) {
+        @content;
+    }
+  }
+  @else if $size == 'med-small' {
+    @media screen and (max-width: $breakpoint-med-small) {
+        @content;
+    }
+  }
+  @else if $size == 'med' {
+    @media screen and (max-width: $breakpoint-med) {
+        @content;
+    }
+  }
+ @else if $size == 'large' {
+    @media screen and (min-width: $breakpoint-large) {
+        @content;
+    }
+  }
+  @else if $size == 'custom' {
+    @media screen and ($type: $breakpoint-large) {
+        @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  }
+}
+
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// Returns URL to an image based on its path
+/// @param {String} $path - image path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function image($path, $base: $base-url) {
+  @return asset($base, 'images/', $path);
+}
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Arimo', 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(34, 34, 34) !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+/// Light blue
+/// @type Color
+$light-blue: rgba(2, 78, 130, 1) !default;
+
+/// Smoke black
+/// @type Color
+$smoke-black: rgb(40, 40, 40) !default;
+
+/// Smoke black
+/// @type Color
+$smoke-black-trans: rgba(40, 40, 40, 0.8) !default;
+
+/// Smoke black translucent
+/// @type Color
+$sticky-transition-color:rgba(229, 229, 229, 0.8) !default;
+
+/// Red
+/// @type Color
+$error-highlight-color: rgb(255, 0, 0) !default;
+
+///  black
+/// @type Color
+$black-color:rgba(0, 0, 0, 1) !default;
+
+/// White
+/// @type Color
+$white-color:rgba(255, 255, 255, 1) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1024px !default;
+
