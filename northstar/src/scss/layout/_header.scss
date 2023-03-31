@@ -1,0 +1,181 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.site-header-container {
+
+    &.sticky-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    z-index:10;
+
+    .burger-menu {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 30px;
+        //display: inline-block;
+        cursor: pointer;
+        display: none;
+
+        /*@include screen(custom, min-width, 1024px) {
+            display: none;
+        }*/
+        @include screen(med-small) {
+            display: block;
+        }
+    }
+
+    /*.burger-menu::before {
+        content: 'Menu';
+        color: $black-color;
+        text-decoration: underline;
+        text-decoration-color:$black-color;  
+    }
+
+    .burger-menu.active::before{
+        content: '';
+    }
+    .burger-menu.active::after{
+        content: 'Close'; 
+        color: $black-color;
+        text-decoration: underline;
+        text-decoration-color:$black-color;  
+    }*/
+
+
+    .fs-bar1,
+    .fs-bar2,
+    .fs-bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: $black-color;
+        margin: 6px 0;
+        transition: 0.8s;
+    }
+
+    .active {
+        .fs-bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .fs-bar2 {
+            opacity: 0;
+        }
+
+        .fs-bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+
+    }
+
+
+}
+
+.site-nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white-color;
+
+    &.scrolled {
+        background: $sticky-transition-color;
+    }
+
+    .nav-start {
+        @include screen(med-small) {
+            display: contents;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 8px;
+        padding: 0;
+    }
+
+    .nav-middle {
+        a {
+            padding: 10px;
+        }
+
+        @include screen(small) {
+            display: none;
+        }
+
+        @include screen(med-small) {
+            display: none;
+        }
+
+    }
+
+    .nav-end {
+        @extend .nav-middle;
+        //margin: 20px;
+        padding: 0px 65px 0px 0px;
+
+        @include screen(small) {
+            display: none;
+        }
+
+        @include screen(med-small) {
+            display: none;
+        }
+    }
+
+    .logo {
+        padding: 22px 10px 22px 65px
+    }
+
+}
+
+
+.site-nav-mobile {
+
+    //background: $smoke-black;
+    transition: background .5s;
+    position: relative;
+
+    &.scrolled {
+        background: $sticky-transition-color;
+    }
+
+    .nav-grid {
+
+        display: none;
+
+        @include screen(custom, min-width, 1024px) {
+            display: none;
+        }
+
+        &.active {
+            display: grid;
+            margin-bottom: 20px;
+
+        }
+    }
+
+    //desktop-up
+
+    .nav_mobile {
+        border-top: 1px solid greenapple;
+        border-bottom: 1px solid greenapple;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: grid;
+        gap: 20px;
+        /* @media screen and (min-width: 600px) {
+                grid-template-columns: repeat(3, 30%);
+              }*/
+
+        .nav-item {
+            margin: 0px 15px;
+            padding: 10px;
+            text-align: center;
+
+        }
+    }
+
+}

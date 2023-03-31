@@ -1,0 +1,29 @@
+
+.product-list {
+  
+    margin: 50px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content: center;
+    .card {
+    width: 295px;
+    height:412px;
+}
+.card__img {
+    width:100%;
+    height: 340px;
+    overflow: hidden; //clips/hides any overflowing conetent
+}
+.card__content {
+    padding-top: 16px;
+    text-align:center;
+}
+.card__title {
+    margin: 1px;
+}
+.card__price {
+    margin:6px
+}
+
+}

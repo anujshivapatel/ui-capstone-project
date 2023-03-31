@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+    margin-left:10px;
+    .footer-links {
+        display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:10px;
+    gap: 15px;
+    }
+    ul {
+        list-style: none;
+        padding:0px;
+    }
+
+    .footer-copyright {
+        margin-left: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .payment-providers {
+        margin-right: 10px;
+    }
+}
+

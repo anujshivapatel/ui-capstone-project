@@ -1,0 +1,74 @@
+@import
+  '../abstracts/variables',
+  '../abstracts/functions',
+  '../abstracts/mixins';
+
+@import
+  '../components/button';
+
+
+  @import
+  '../components/form';
+
+  .contact-us-container {
+    display:flex;
+    margin:10px;
+   // flex-wrap: wrap;
+    // justify-content: center;
+    @include screen(med-small) {
+      flex-wrap: wrap;
+     justify-content: center;
+     section {
+      width:100%;
+    }
+     aside {
+      width:300px;
+    }
+    }
+    @include screen(small) {
+     flex-wrap: wrap;
+     justify-content: center;
+     section {
+      width:300px;
+    }
+     aside {
+      width:300px;
+    }
+    }
+    @include screen(custom, min-width, 1024px) {
+      section {
+        flex: 3;
+      }
+      aside {
+        flex: 1;
+        width:350px;
+      }
+    }
+    
+  }
+
+  .section-heading {
+    @include screen(med-small) {
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    }
+  }
+  .section-heading__description {
+    @include screen(med-small) {
+      width: 250px;
+    }
+  }
+
+  #success-message {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+  }
+  
+
+  

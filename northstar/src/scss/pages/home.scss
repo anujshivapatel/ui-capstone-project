@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+@import
+  '../abstracts/variables',
+  '../abstracts/functions',
+  '../abstracts/mixins';
+
+@import
+  '../components/button';
+
+  @import
+  '../components/_home-teaser';
+
+  @import
+  '../components/product-list';
+
+    @import
+  '../components/section-heading';
+
+  @import
+  '../components/delivery-payment-cards';
+
+  @import
+  '../components/offers';
+
+//@import
+  //'../pages/home';
+
+  .shop-now--align-center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 110px;
+  }

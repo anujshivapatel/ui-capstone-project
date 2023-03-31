@@ -1,0 +1,115 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 18px / 1.4 $text-font-stack;
+  
+}
+
+.homeTeaser {
+    h2 {
+      font: normal 28px / 1.4 $text-font-stack;
+      
+      @media only screen and (max-width: 960px) and (min-width: 600px)  {
+        font: normal 38px / 1.4 $text-font-stack;
+    }
+      @include screen(custom, min-width, 1024px) {
+        font: normal 48px / 48px $text-font-stack;
+    }
+    }
+}
+
+.product-list {
+  h2 {
+    font: bold 16px / 1 $text-font-stack;
+
+  }
+}
+
+.section-heading {
+  h2 {
+    font: bold 36px / 1 $text-font-stack;
+
+  }
+  p {
+    font: normal 20px / 1 $text-font-stack;
+  }
+}
+
+.delivery-payments-info {
+  p {
+    &.card__title {
+      font: bold 16px / 1 $text-font-stack;
+    }
+    &.card__description {
+      font: normal 16px / 1 $text-font-stack;
+    }
+  }
+}
+
+.offers {
+  h2 {
+    color:$white-color;
+  }
+  p {
+    color:$white-color;
+  }
+}
+
+footer {
+  a {
+    font: normal 16px / 1.4 $text-font-stack;
+  }
+}
+.footer-copyright {
+  h6 {
+    font: italic 14px / 1 $text-font-stack;
+    margin:0px;
+  }
+  a {
+    font: normal 14px / 1 $text-font-stack;
+    
+  }
+}
+
+.quotes__card__content {
+  h3 {
+      font: bold 24px / 1.4 $text-font-stack;
+    
+  }
+  p {
+      font: normal 21px / 1.4 $text-font-stack;
+    
+  }
+}
+
+.founders {
+  h2 {
+     font: bold 21px / 1.4 $text-font-stack;
+  }
+}
+
+.contact-us-container {
+  .section-heading {
+    h2 {
+      @include screen(med-small) {
+        font: bold 16px / 1.4 $text-font-stack;
+        }
+        @media only screen and (max-width: 960px) and (min-width: 600px)  {
+          font: normal 28px / 1.4 $text-font-stack;
+      }
+       @include screen(custom, min-width, 1024px) {
+        font: bold 36px / 1.4 $text-font-stack;
+    }
+    }
+    p {
+      @include screen(med-small) {
+        font: normal 10px / 1.4 $text-font-stack;
+        }
+       @include screen(custom, min-width, 1024px) {
+        font: normal 16px / 19px $text-font-stack;
+    }
+    }
+  }
+}

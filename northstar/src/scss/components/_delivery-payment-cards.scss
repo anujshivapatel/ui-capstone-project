@@ -1,0 +1,56 @@
+.delivery-payments-info {
+    margin: 70px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    //margin:65px;
+    gap: 65px;
+    @include screen(med-small) {
+        gap: 85px;
+    }
+    justify-content: center;
+    .card {
+        width: 250px;
+
+       
+    }
+    p {
+        margin: 10px 0px;
+    }
+    .card__description {
+        margin-left: 55px;
+    }
+    .ship::before {
+        content: url('../../resources/iconshipping.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    .support::before {
+        content: url('../../resources/iconsupport.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    .return::before {
+        content: url('../../resources/iconreturn.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    .secure::before {
+        content: url('../../resources/iconpayment.svg');
+        margin-right:22px;
+        margin-right: 22px;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    }
+    
+    
+}

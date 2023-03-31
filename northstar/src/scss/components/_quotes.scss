@@ -1,0 +1,22 @@
+.quotes {
+    margin-top: 60px;
+}
+.quotes__card {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    //padding-bottom: 140px 10px;
+    padding: 70px 10px;
+}
+.quotes__card__img {
+    width: 210px;
+    height:210px;
+}
+.quotes__card__content {
+    width: 663px;
+}
+.quote__img::before {
+    content: url('../../resources/quote.svg');
+}

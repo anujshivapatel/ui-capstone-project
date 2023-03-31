@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $light-blue;
+    text-decoration: underline;
+  }
+}
+
+[class*='button'] {
+  //color: $text-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    background-color: white;
+    text-decoration: none;
+  }
+}
+
+footer a {
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+body {-webkit-backface-visibility: hidden;}
+
+input[type=text], [type=email]{
+  border: none;
+  border-bottom: 1px solid $black-color;
+  outline:none;
+  //width:100%;
+  margin: 8px 0;
+  padding:10px 0;
+
+  &:focus {
+      //outline: rgb(82, 81, 81) ridge 1px; 
+      border-bottom: 2px solid $light-blue;
+  }
+}
